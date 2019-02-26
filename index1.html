@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    :root {}
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+    }
+
+    .center {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #f3f3f3;
+    }
+
+    .box {
+      width: 545px;
+      height: 545px;
+      border-radius: 50%;
+      background-color: rgba(0, 0, 0, 0.2);
+      border: 6px solid rgba(30, 191, 246, 0.9);
+      box-shadow: 0 0 26px rgba(30, 191, 246, 0.9), inset 0 0 26px rgba(30, 191, 246, 0.9);
+      transform: rotateX(72deg);
+    }
+
+    .tray_list {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    .tray_item {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+    }
+
+    .tray_item:nth-child(1) {
+      transform: rotateZ(0deg);
+    }
+
+    .tray_item:nth-child(2) {
+      transform: rotateZ(72deg);
+    }
+
+    .tray_item:nth-child(3) {
+      transform: rotateZ(144deg);
+    }
+
+    .tray_item:nth-child(4) {
+      transform: rotateZ(216deg);
+    }
+
+    .tray_item:nth-child(5) {
+      transform: rotateZ(288deg);
+    }
+
+    .polygon {
+      position: absolute;
+      width: 120px;
+      height: 100px;
+      left: 50%;
+      top: 0;
+      transform: translate(-50%, 0px) rotateX(80deg);
+      background-color: red;
+      clip-path: polygon(20px 0, 100px 0, 120px 50px, 100px 100px, 20px 100px, 0 50px);
+      clip-path: url(#aaa)
+    }
+
+    .cnt {
+      position: absolute;
+
+    }
+  </style>
+</head>
+
+<body>
+  <svg width="106" height="92" viewBox="0 0 106 92">
+    <defs>
+      <clipPath id="aaa">
+        <path d="M25,0h50l25,43l-25,43h-50l-25-43L25,0" stroke="red" stroke-width="6" fill="none"
+          style="transform:translate(3px,3px);" stroke-linecap="round"></path>
+      </clipPath>
+    </defs>
+  </svg>
+  <div class="center">
+    <div class="box">
+      <div class="tray_list">
+        <div class="tray_item">
+          <div class="polygon">
+            <div class="cnt"></div>
+          </div>
+        </div>
+        <div class="tray_item">
+          <div class="polygon">
+            <div class="cnt"></div>
+          </div>
+        </div>
+        <div class="tray_item">
+          <div class="polygon">
+            <div class="cnt"></div>
+          </div>
+        </div>
+        <div class="tray_item">
+          <div class="polygon">
+            =<div class="cnt"></div>
+          </div>
+        </div>
+        <div class="tray_item">
+          <div class="polygon">
+            <div class="cnt"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
