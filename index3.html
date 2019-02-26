@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+    }
+
+    .center {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #f3f3f3;
+    }
+
+    .box {
+      width: 545px;
+      height: 545px;
+      position: relative;
+    }
+
+    .tray1 {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background-color: rgba(0, 0, 0, 0.1);
+      border: 6px solid rgba(30, 191, 246, 0.9);
+      box-shadow: 0 0 26px rgba(30, 191, 246, 0.9), inset 0 0 26px rgba(30, 191, 246, 0.9);
+      transform: rotateX(2deg);
+    }
+
+    .tray2 {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%;
+      height: 80%;
+      border-radius: 50%;
+      background-color: rgba(0, 0, 0, 0.1);
+      border: 6px solid rgba(30, 191, 246, 0.9);
+      box-shadow: 0 0 26px rgba(30, 191, 246, 0.9), inset 0 0 26px rgba(30, 191, 246, 0.9);
+      transform: rotateX(2deg);
+    }
+
+    .round {}
+
+    .round-item {}
+
+
+
+
+    .div {
+      width: 100%;
+      height: 100%;
+      color: #fff;
+      font-size: 50px;
+      line-height: 100%;
+      text-align: center;
+      position: relative;
+      -webkit-transform-style: preserve-3d;
+      transform-style: preserve-3d;
+      -webkit-transform-origin: center center -272px;
+      transform-origin: center center -272px;
+    }
+
+    div span {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      -webkit-transform-origin: center center -272px;
+      transform-origin: center center -272px;
+    }
+
+    span:nth-of-type(1) {
+      background: red;
+      -webkit-transform: rotateY(0deg);
+      transform: rotateY(0deg);
+    }
+
+    span:nth-of-type(2) {
+      background: yellow;
+      -webkit-transform: rotateY(90deg);
+      transform: rotateY(90deg);
+    }
+
+    span:nth-of-type(3) {
+      background: blue;
+      -webkit-transform: rotateY(180deg);
+      transform: rotateY(180deg);
+    }
+
+    span:nth-of-type(4) {
+      background: green;
+      -webkit-transform: rotateY(270deg);
+      transform: rotateY(270deg);
+    }
+
+    span:nth-of-type(5) {
+      background: pink;
+      -webkit-transform: rotateX(90deg);
+      transform: rotateX(90deg);
+    }
+
+    span:nth-of-type(6) {
+      background: #000;
+      -webkit-transform: rotateX(-90deg);
+      transform: rotateX(-90deg);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="center">
+    <div class="box">
+          <div class="div">
+                <span>前</span>
+                <span>右</span>
+                <span>后</span>
+                <span>左</span>
+                <span>上</span>
+                <span>下</span>
+            </div>
+    </div>
+  </div>
+</body>
+
+</html>

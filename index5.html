@@ -1,0 +1,308 @@
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .wrapper {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+    }
+
+    .content {
+      position: relative;
+      width: 600px;
+      height: 600px;
+      -webkit-transform-style: preserve-3d;
+      transform-style: preserve-3d;
+      -webkit-transform-origin: center center -300px;
+      transform-origin: center center 0px;
+      transform: rotateX(75deg);
+    }
+
+    .round-pillar {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: url(./circle.svg) no-repeat center center;
+      background-size: 100%;
+    }
+
+    .tray {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      /* border-radius: 50%;
+        background-color: rgba(0, 0, 0, 0.1);
+        border: 6px solid rgba(255, 0, 0, 1); */
+      transform: rotateX(0deg);
+    }
+
+    .content * {
+      -webkit-transform-style: preserve-3d;
+      transform-style: preserve-3d;
+    }
+
+    .round-circle {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      transform: rotateX(0deg) translate3d(0, 0, 80px);
+
+    }
+
+    .map-area {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      transform: rotateX(0deg) translate3d(0, 0, 190px);
+    }
+
+    .map-wrapper {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      transform: rotateX(15deg);
+    }
+
+    .map-div {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      transform: rotateX(270deg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .map-center {
+      padding: 10px;
+    }
+
+    .map {
+      width: 200px;
+      height: 160px;
+      background-color: green;
+    }
+
+    .map-name {
+      line-height: 28px;
+      color: red;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .round-box {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 80%;
+      height: 80%;
+      transform: translate3d(-50%, -50%, 0);
+
+      border: 8px solid red;
+      border-radius: 50%;
+    }
+
+    .animation {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      animation: rotate 18s linear infinite;
+    }
+
+    .content:hover .animation {
+      animation-play-state: paused;
+    }
+
+    .round-circle .round-jo {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    .round-jo:nth-child(1) {
+      transform: rotateZ(0deg);
+    }
+
+    .round-jo:nth-child(2) {
+      transform: rotateZ(72deg);
+    }
+
+    .round-jo:nth-child(3) {
+      transform: rotateZ(144deg);
+    }
+
+    .round-jo:nth-child(4) {
+      transform: rotateZ(216deg);
+    }
+
+    .round-jo:nth-child(5) {
+      transform: rotateZ(288deg);
+    }
+
+    .round-inner {
+      position: absolute;
+      width: 106px;
+      height: 116px;
+      left: 50%;
+      top: 0;
+      transform: translate(-50%, -44px) rotateX(90deg);
+      transform-origin: center center -15px;
+    }
+
+    .innner-reverse {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      transform: rotateX(180deg);
+      overflow: hidden;
+    }
+
+    .polygon {
+      width: 106px;
+      height: 92px;
+      background-color: red;
+      clip-path: url(#polygon);
+      transform-origin: center center -50px;
+      overflow: hidden;
+    }
+
+    .innner-reverse .text {
+      line-height: 24px;
+      text-align: center;
+      color: red;
+      font-size: 14px;
+      transform: rotateY(180deg);
+    }
+
+    @keyframes rotate {
+      0% {
+        transform: rotateZ(0deg)
+      }
+
+      100% {
+        transform: rotateZ(360deg)
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <svg width="106" height="92" viewBox="0 0 106 92">
+    <defs>
+      <clipPath id="polygon">
+        <path d="M25,0h50l25,43l-25,43h-50l-25-43L25,0" stroke="red" stroke-width="6" fill="none"
+          style="transform:translate(3px,3px);" stroke-linecap="round"></path>
+      </clipPath>
+    </defs>
+  </svg>
+  <div class="wrapper">
+    <div class="content">
+      <div class="round-pillar"></div>
+      <div class="tray"></div>
+      <div class="round-circle">
+        <div class="round-box">
+          <div class="animation">
+            <div class="round-jo">
+              <div class="round-inner">
+                <div class="innner-reverse">
+                  <div class="polygon"></div>
+                  <div class="text">感知</div>
+                </div>
+              </div>
+            </div>
+            <div class="round-jo">
+              <div class="round-inner">
+                <div class="innner-reverse">
+                  <div class="polygon"></div>
+                  <div class="text">AR</div>
+                </div>
+              </div>
+            </div>
+            <div class="round-jo">
+              <div class="round-inner">
+                <div class="innner-reverse">
+                  <div class="polygon"></div>
+                  <div class="text">警情</div>
+                </div>
+              </div>
+            </div>
+            <div class="round-jo">
+              <div class="round-inner">
+                <div class="innner-reverse">
+                  <div class="polygon"></div>
+                  <div class="text">数据</div>
+                </div>
+              </div>
+            </div>
+            <div class="round-jo">
+              <div class="round-inner">
+                <div class="innner-reverse">
+                  <div class="polygon"></div>
+                  <div class="text">智能</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="map-area">
+        <div class="map-wrapper">
+          <div class="map-div">
+            <div class="map-center">
+              <div class="map"></div>
+              <div class="map-name">松江区</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+
+</html>
